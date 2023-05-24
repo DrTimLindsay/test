@@ -3,6 +3,7 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import dash_bootstrap_components as dbc
 # import datetime
+import plotly.io as pio
 
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP],
@@ -76,3 +77,5 @@ def update_output_div(input_value):
 
 if __name__ == "__main__":
     app.run_server(debug=True)
+
+pio.write_html(main, file="index.html", auto_open=True)
